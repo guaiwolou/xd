@@ -8,7 +8,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/vedio")
-public class VedeoController {
+public class VideoController {
 
     @RequestMapping("/list")
     public Object list(){
