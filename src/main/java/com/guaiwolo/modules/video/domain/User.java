@@ -1,11 +1,13 @@
 package com.guaiwolo.modules.video.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
 public class User {
     private int id;
     private String userName;
+    @JsonIgnore
     private String pwd;
 
     public User() {
