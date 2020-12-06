@@ -4,10 +4,7 @@ import com.guaiwolo.modules.video.domain.Video;
 import com.guaiwolo.modules.video.service.VideoService;
 import com.guaiwolo.modules.video.utils.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,8 +18,14 @@ public class VideoController {
 
 //    @RequestMapping(value = "list",method = RequestMethod.GET)
     @GetMapping("list")
-    public Object list(){
+    public JsonData list(){
        List<Video> list = videoService.listVideo();
         return JsonData.buildSuccess(list);
+    }
+    @PostMapping("save_video_chapter")
+    public JsonData saveVideoChapter(@RequestBody Video video){
+        System.out.println(video.toString());
+        return JsonData.buildSuccess("");
+
     }
 }
